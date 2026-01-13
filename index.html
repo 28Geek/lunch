@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明天中午吃啥</title>
+</head>
+
+<body>
+    <button id="AcButton">開始搖</button>
+
+    <script>
+        const fc = {
+            1: '西紅柿炒蛋',
+            2: '西紅柿炒排骨',
+            3: '苦瓜炒蛋',
+            4: '蒜臺炒肉片',
+            5: '蟲草花炒雞',
+            6: '咖喱土豆雞',
+            7: '青椒炒花甲',
+            8: '西藍花炒蒜蓉',
+            9: '土豆炒雞',
+            10: '現成燒鴨半邊',
+            11: '豬肝炒豬腰',
+            12: '紫蘇炒小排骨',
+            13: '可樂雞翅',
+            14: '口蘑炒雞腿肉',
+            15: '香乾炒肉',
+            16: '豆腐腐竹炒肉蛋末',
+            17: '青椒炒魷魚',
+            18: '韭炒蛋',
+            19: '洋炒牛肉卷',
+            20: '雞肉腸炒',
+            21: '玉米蘿葡豌豆丁炒午餐肉',
+            22: '雞肉腸炒青椒炒蛋',
+            23: '麻婆豆腐',
+            24: '香辣扇具丁',
+            25: '肉末炒土豆',
+        }
+
+        const sc = {
+            1: '蟲草花蒸雞',
+            2: '蒸魚餅',
+            3: '蟲草花紅棗枸杞蒸雞',
+            4: '砂仁蒸排骨',
+            5: '蒜蓉蒸白貝',
+            6: '水煮蝦',
+            7: '蒸肉餅',
+            8: '蒸魚',
+            9: '砂仁蒸雞',
+            10: '豆豉蒸排骨',
+            11: '蒸水蛋',
+            12: '香菇蒸排骨',
+        }
+
+        document.getElementById('AcButton').onclick = function () {
+            const pTags = document.querySelectorAll('p');
+
+            pTags.forEach(p => {
+                p.remove();
+            });
+
+            const f = Math.floor(Math.random() * 18) + 1;
+            const s = Math.floor(Math.random() * 12) + 1;
+
+            const fcs = fc[f];
+            const scs = sc[s];
+
+            const p1Element = document.createElement('p');
+            p1Element.textContent = fcs;
+            document.body.appendChild(p1Element);
+
+            const p2Element = document.createElement('p');
+            p2Element.textContent = scs;
+            document.body.appendChild(p2Element);
+        }
+    </script>
+</body>
+
+</html>
